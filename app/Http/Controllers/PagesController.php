@@ -25,7 +25,8 @@ class PagesController extends Controller
 
     public function addSong(){
         $data = array(
-            'title' => 'Services'
+            'title' => 'Services',
+            'services' => ['Web Design','Programming','SEO']
         );
         return view('pages.addSong')->with($data);
     }

@@ -14,3 +14,7 @@ Route::get('/signup',[PagesController::class,'signup']);
 Route::get('/managePlaylist',[PagesController::class,'managePlaylist']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
