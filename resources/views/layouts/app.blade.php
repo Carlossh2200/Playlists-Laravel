@@ -36,6 +36,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/playlists_laravel/public/">Home</a>
+                        </li>
+                        <li>    
+                        <a class="nav-link" href="/playlists_laravel/public/services">Services</a>
+                        </li>
+                        <li>    
+                        <a class="nav-link" href="/playlists_laravel/public/about">About</a>
+                        </li>
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -72,7 +82,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 container">
             @yield('content')
         </main>
     </div>

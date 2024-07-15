@@ -30,4 +30,8 @@ class PagesController extends Controller
         );
         return view('pages.addSong')->with($data);
     }
+
+    public function about(){
+        return view('pages.about');
+    }
 }
