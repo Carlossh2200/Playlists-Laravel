@@ -30,6 +30,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/playlists_laravel/public/posts/create">Add Post</a>
+                        </li>
 
                     </ul>
 
@@ -39,13 +42,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/playlists_laravel/public/">Home</a>
                         </li>
-                        <li>    
-                        <a class="nav-link" href="/playlists_laravel/public/services">Services</a>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/playlists_laravel/public/services">Services</a>
                         </li>
-                        <li>    
-                        <a class="nav-link" href="/playlists_laravel/public/about">About</a>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/playlists_laravel/public/about">About</a>
                         </li>
-                        
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/playlists_laravel/public/posts">Posts</a>
+                        </li>
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -82,7 +91,8 @@
             </div>
         </nav>
 
-        <main class="py-4 container">
+        <main class="py-4" container>
+            @include('inc.messages')            
             @yield('content')
         </main>
     </div>

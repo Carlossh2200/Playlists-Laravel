@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/',[PagesController::class,'index']);
@@ -16,8 +17,15 @@ Route::get('/managePlaylist',[PagesController::class,'managePlaylist']);
 
 Route::get('/about',[PagesController::class,'about']);
 
+Route::get('/posts',[PostsController::class,'index']);
+
 
 
 Auth::routes(); 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ 
+Route::resource('posts','App\Http\Controllers\PostsController');
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
