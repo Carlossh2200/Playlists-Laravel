@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -33,12 +33,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/playlists_laravel/public/posts/create">Add Post</a>
                         </li>
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+
                         <li class="nav-item">
                             <a class="nav-link" href="/playlists_laravel/public/">Home</a>
                         </li>
@@ -48,11 +48,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/playlists_laravel/public/about">About</a>
+                            <a class="nav-link" href="/playlists_laravel/public/posts">Posts</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/playlists_laravel/public/posts">Posts</a>
+                            <a class="nav-link" href="/playlists_laravel/public/about">About</a>
                         </li>
 
                         @guest
@@ -91,10 +91,12 @@
             </div>
         </nav>
 
-        <main class="py-4" container>
-            @include('inc.messages')            
-            @yield('content')
-        </main>
+        <div class="container">
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
+        
     </div>
 </body>
 </html>

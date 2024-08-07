@@ -15,6 +15,12 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <br>
+                    <br>
+                    <a href="playlists_laravel/public/posts/create" class="btn btn-primary">Create Post</a>
+                    <br>
+                    <br>
+                    <h3>Your Posts</h3>
                 </div>
             </div>
         </div>
