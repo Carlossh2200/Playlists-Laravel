@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Post;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -21,8 +24,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index() 
     {
-        return view('home');
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $posts = $user ? $user->posts : collect();
+        return view('home')->with('posts', $posts);
+
     }
 }
